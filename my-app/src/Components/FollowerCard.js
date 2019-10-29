@@ -1,4 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
 
 import { Card, Button, CardHeader, CardFooter, CardImg, CardBody,
     CardTitle, CardText } from 'reactstrap';
@@ -9,17 +12,18 @@ import { Card, Button, CardHeader, CardFooter, CardImg, CardBody,
 
         console.log("here are props",props);
         return(
-            <div>
+            <div className = "cards">
                 
         <Card>
-        <CardHeader>{props.followers.name}</CardHeader>
+        <CardHeader>{props.followers.login}</CardHeader>
+        <img className ="user-img" top width="100%" src={props.followers.avatar_url} alt="Card image cap" />
         <CardBody>
-          <CardTitle>Bio</CardTitle>
+         
           <CardText>{props.followers.bio}</CardText>
-          <Button>Go somewhere</Button>
+          <Button>Github Link</Button>
         </CardBody>
-        <CardImg top width="10%" src={props.followers.avatar_url} alt="Card image cap" />
-        <CardFooter>Footer</CardFooter>
+       
+        <CardFooter></CardFooter>
       </Card>
 
     

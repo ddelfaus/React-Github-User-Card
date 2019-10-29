@@ -10,16 +10,17 @@ const User = props => {
 
 
     return(
-        <div>
-        <Card>
+        <div className = "cards">
+        <Card >
         <CardHeader>{props.users.name}</CardHeader>
+        <img className ="user-img" top width="100%" src={props.users.avatar_url} alt="Card image cap" />
         <CardBody>
           <CardTitle>Bio</CardTitle>
           <CardText>{props.users.bio}</CardText>
-          <Button>Go somewhere</Button>
+          <Button>Github Link</Button>
         </CardBody>
-        <CardImg top width="10%" src={props.users.avatar_url} alt="Card image cap" />
-        <CardFooter>Footer</CardFooter>
+       
+        <CardFooter></CardFooter>
       </Card>
 
       </div>

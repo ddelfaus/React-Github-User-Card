@@ -48,8 +48,10 @@ class App extends React.Component  {
   return (
     <div className="App">
      <h1>React Github User Cards</h1>
+     <div className = "card-container">
      <User users = {this.state.users} />
     <Followers followers = {this.state.followers} />
+    </div>
     </div>
   );
 }
