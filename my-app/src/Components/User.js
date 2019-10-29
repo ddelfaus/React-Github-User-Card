@@ -8,7 +8,7 @@ import { Card, Button, CardHeader, CardFooter, CardImg, CardBody,
 const User = props => {
 
 
-    console.log("here are props",props);
+
     return(
         <div>
         <Card>

@@ -4,14 +4,15 @@ import './App.css';
 import axios from 'axios';
 
 import User from './Components/User'
-
+import Followers from './Components/Followers'
 
 class App extends React.Component  {
   constructor() {
     super();
   
   this.state = {
-    users:[]
+    users:[],
+    followers:[]
   }
 
   }
@@ -28,6 +29,18 @@ class App extends React.Component  {
       
       })
       .catch(err => console.log(err));
+
+      axios
+      .get('https://api.github.com/users/ddelfaus/followers')
+      .then(res => {
+          console.log(res)
+        this.setState({  
+          followers: res.data
+          
+        });
+      
+      })
+      .catch(err => console.log(err));
   }
 
 
@@ -36,7 +49,7 @@ class App extends React.Component  {
     <div className="App">
      <h1>React Github User Cards</h1>
      <User users = {this.state.users} />
-    
+    <Followers followers = {this.state.followers} />
     </div>
   );
 }
